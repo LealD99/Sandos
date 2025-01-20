@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandos</title>
+</head>
+<body>
+    <h1>Contenido desde JSON</h1>
+    <div id="content"></div>
+    <script>
+        // Cambia 'tu-usuario' y 'mi-sitio-json' por tu nombre de usuario y el nombre de tu repositorio
+        fetch('https://raw.githubusercontent.com/LealD99/Sandos/sandos_2025-01-20 11_00_49')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('content').innerHTML = `<h2>${data.title}</h2><p>${data.description}</p>`;
+            })
+            .catch(error => console.error('Error al cargar el JSON:', error));
+    </script>
+</body>
+</html>
